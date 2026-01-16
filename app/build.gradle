@@ -1,0 +1,53 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'aman.jusplay'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'aman.jusplay'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Core AndroidX
+    implementation libs.androidx.core
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    
+    // Navigation Component
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+    
+    // Media3 (modern ExoPlayer for local media playback)
+    implementation libs.media3.exoplayer
+    implementation libs.media3.ui
+    
+    // Glide (for image loading)
+    implementation libs.glide
+    annotationProcessor libs.glide.compiler
+    
+    // Palette (for extracting colors from images)
+    implementation libs.androidx.palette
+    
+    // BlurView (for blur effects)
+    implementation 'com.github.Dimezis:BlurView:version-3.2.0'
+}
